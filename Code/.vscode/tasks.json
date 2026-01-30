@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\Users\\chchi\\Chiru_MIngw\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-I", "C:\\raylib\\w64devkit\\include",
+                "-L", "C:\\raylib\\raylib\\src",
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm"
+            ],
+            "options": { "cwd": "${fileDirname}" },
+            "problemMatcher": ["$gcc"],
+            "group": { "kind": "build", "isDefault": false }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe build active file",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/I", "C:\\raylib\\w64devkit\\include",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}",
+                "/link",
+                "/LIBPATH:C:\\raylib\\raylib\\src",
+                "raylib.lib",
+                "gdi32.lib",
+                "winmm.lib",
+                "user32.lib",
+                "shell32.lib"
+            ],
+            "options": { "cwd": "${fileDirname}" },
+            "problemMatcher": ["$msCompile"],
+            "group": { "kind": "build", "isDefault": true }
+        }
+    ]
+}
